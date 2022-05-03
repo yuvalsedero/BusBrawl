@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    [SerializeField] static float timeToSpawn = 2.0f;
-    float CountDown = timeToSpawn;
+    float timeToSpawn = 2.0f;
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
 

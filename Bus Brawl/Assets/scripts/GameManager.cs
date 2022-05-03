@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     void Update() // text for score.
     {
         PassengersInBus = BusCollider.Passengers;
-        MyText.text = "Passengers in Bus: " + PassengersInBus.ToString("F0") + " out of 50";
+        MyText.text = "Passengers in Bus: " + PassengersInBus.ToString("F0") + " out of 5";
         if (BusCollider.Passengers >= 5)
         {
             Debug.Log("You Lost");

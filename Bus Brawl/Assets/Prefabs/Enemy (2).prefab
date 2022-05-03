@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 310671621443343412}
   - component: {fileID: 310671621443343411}
   - component: {fileID: 6863369855105922775}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Enemy (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ebd22cf5c01824d925869b07a68747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   maxHealth: 100
   healthBarUI: {fileID: 2842198541301654154}
   slider: {fileID: 2037799250248565189}
@@ -166,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2579525025218666128}
   - component: {fileID: 2037799250248565189}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +258,7 @@ GameObject:
   - component: {fileID: 1973497891388942685}
   - component: {fileID: 7346815656076692779}
   - component: {fileID: 9184714770269628272}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +358,7 @@ GameObject:
   - component: {fileID: 5984789566686445122}
   - component: {fileID: 2899905580196088372}
   - component: {fileID: 1953520274365705840}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8462577527757986364}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +470,7 @@ GameObject:
   - component: {fileID: 6593099883169987600}
   - component: {fileID: 4207225987453547970}
   - component: {fileID: 8863354318607253551}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7298874753491954676}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

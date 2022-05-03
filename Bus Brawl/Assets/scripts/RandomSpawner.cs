@@ -12,7 +12,7 @@ public class RandomSpawner : MonoBehaviour
     // Update is called once per frame
     void Update() // spawning enemys from enemy prefabs, every 2 sec.
     {
-        timeToSpawn -= Time.deltaTime;
+        timeToSpawn -= Time.deltaTime; // bug - the spawner doenst spawn with childern (canvas and hp)
         if (timeToSpawn <= 0)
         {
             timeToSpawn = 0;

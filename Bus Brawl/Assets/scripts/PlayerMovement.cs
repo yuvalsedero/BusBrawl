@@ -21,15 +21,15 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Speed", Mathf.Abs(horizontal)); //set animation of walking
-        if(Input.GetButtonDown("Fire1")) // make the attack animation
-        {
-            // Fire1 = true;
-            animator.SetBool("isFire1", true);
-        }
-        if(Input.GetButtonUp("Fire1"))  // make the animation stop when it is down (bool sets to false again)
-            {
-                animator.SetBool("isFire1", false);
-            }
+        // if(Input.GetButtonDown("Fire1")) // make the attack animation
+        // {
+        //     // Fire1 = true;
+        //     animator.SetBool("isFire1", true);
+        // }
+        // if(Input.GetButtonUp("Fire1"))  // make the animation stop when it is down (bool sets to false again)
+        //     {
+        //         animator.SetBool("isFire1", false);
+        //     }
     }
 
     private void FixedUpdate() // set body movement to run speed and the directions from update
@@ -45,10 +45,13 @@ public class PlayerMovement : MonoBehaviour
          }
  }
     
-    void OnCollisionEnter2D(Collision2D collision) // killing enemy on contact
-    {
-        if(collision.gameObject.tag == "Enemy"){
-            Destroy(collision.gameObject);
-        }
-    }
+    // void OnCollisionEnter2D(Collision2D collision) // killing enemy on contact
+    // {
+    //     if(collision.gameObject.tag == "Enemy"){
+    //         // var enemyhp = collision.gameObject.GetComponent<EnemyHealth>();
+    //         // enemyhp.health -= 10;
+            
+    //         // Destroy(collision.gameObject);
+    //     }
+    // }
 }

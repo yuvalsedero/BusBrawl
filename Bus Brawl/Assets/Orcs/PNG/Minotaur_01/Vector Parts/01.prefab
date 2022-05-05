@@ -964,7 +964,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2361813508425001710}
   - component: {fileID: 4148306337771637936}
+<<<<<<< Updated upstream
   - component: {fileID: 3646960920547763672}
+=======
+  - component: {fileID: 3246290839838942464}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Face 01
   m_TagString: Untagged
@@ -1039,7 +1043,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!114 &3646960920547763672
+=======
+--- !u!114 &3246290839838942464
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

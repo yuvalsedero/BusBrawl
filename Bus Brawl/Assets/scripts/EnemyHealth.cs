@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Collider2D>().enabled = true;
         health = maxHealth;
         slider.value = CalculateHealth();
     }

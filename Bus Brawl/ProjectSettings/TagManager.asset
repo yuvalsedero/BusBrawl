@@ -46,6 +46,12 @@ TagManager:
   - name: Floor
     uniqueID: 2425651459
     locked: 0
+  - name: SideWalk
+    uniqueID: 1329784969
+    locked: 0
+  - name: Land
+    uniqueID: 1500555235
+    locked: 0
   - name: aboveFloor
     uniqueID: 4250941897
     locked: 0

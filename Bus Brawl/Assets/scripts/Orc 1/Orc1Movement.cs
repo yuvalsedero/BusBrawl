@@ -6,12 +6,14 @@ public class Orc1Movement : MonoBehaviour
 
 {
     public Animator animator;
-    private Rigidbody2D _rigidbody;
+    float knockBackTimer = 3.0f;
+    private Rigidbody2D body;
     Vector2 positionToMoveTo;
-    [SerializeField] float speed;
+    public Vector2 targetPosition;
+    [SerializeField] public float speed;
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,31 @@ public class Orc1Movement : MonoBehaviour
     void Update()
     {
         Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads bus entrance
-        _rigidbody.MovePosition(targetPosition);
+        body.transform.position = targetPosition;
         animator.SetFloat("Speed", speed);
         if(animator.GetBool("IsDead"))
         {
             this.enabled = false;
         }
+    }
+    public void knockBack()
+    {
+        
+        // speed = speed *-1;
+        Debug.Log("knockback");
+        // knockBackTimer -= Time.deltaTime;
+        // if (knockBackTimer <= 0)
+        // {
+        //     speed = speed *-1;
+
+        // }
+        // Debug.Log("after");
+        // while (knockBackTimer > 0)
+        // {
+        //     Debug.Log("hello");
+       
+        // }
+            
+        
     }
 }

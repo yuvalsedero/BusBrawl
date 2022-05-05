@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody;
+    public Orc1Movement knockback;
+    private Rigidbody2D body;
     public Animator animator;
     float health;
     public float maxHealth;
@@ -22,6 +23,8 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         animator.SetTrigger("Hurt");
+        knockback = GetComponent<Orc1Movement>();
+        knockback.knockBack();
         if (health <= 0)
         {
             Die();

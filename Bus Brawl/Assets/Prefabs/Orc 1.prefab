@@ -34,7 +34,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -216,10 +216,11 @@ GameObject:
   - component: {fileID: 6677774819749941532}
   - component: {fileID: 6677774819749941535}
   - component: {fileID: 6677774819749941534}
+  - component: {fileID: 6677774819749941529}
+  - component: {fileID: 566350073397834749}
   - component: {fileID: 779933650}
-  - component: {fileID: 1151147111}
   m_Layer: 21
-  m_Name: Orc 1
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,8 +280,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -44025399
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4744ba275a0ea0f4dbc060716a2e387d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -327,9 +328,39 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22114582, y: -0.16911323}
-  m_Size: {x: 1.9106085, y: 3.4829907}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &6677774819749941529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677774819749941528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dad43407a39b94cb230175b6c3ece8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+--- !u!114 &566350073397834749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677774819749941528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ebd22cf5c01824d925869b07a68747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  animator: {fileID: 779933650}
+  maxHealth: 100
+  healthBarUI: {fileID: 9192416812287502240}
+  slider: {fileID: 4946137114401899759}
 --- !u!95 &779933650
 Animator:
   serializedVersion: 4
@@ -350,23 +381,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1151147111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6677774819749941528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ebd22cf5c01824d925869b07a68747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  animator: {fileID: 779933650}
-  maxHealth: 100
-  healthBarUI: {fileID: 9192416812287502240}
-  slider: {fileID: 4946137114401899759}
 --- !u!1 &7578570547650424895
 GameObject:
   m_ObjectHideFlags: 0

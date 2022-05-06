@@ -5,8 +5,10 @@ using UnityEngine;
 public class Orc1Movement : MonoBehaviour
 
 {
+    public float thrust;
+    public float knockBackTime;
+
     public Animator animator;
-    float knockBackTimer = 3.0f;
     private Rigidbody2D body;
     Vector2 positionToMoveTo;
     public Vector2 targetPosition;
@@ -18,7 +20,7 @@ public class Orc1Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position; // get bus entrance position
+        positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position; // get bus entrance position
     }
 
     // Update is called once per frame
@@ -27,29 +29,38 @@ public class Orc1Movement : MonoBehaviour
         Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads bus entrance
         body.transform.position = targetPosition;
         animator.SetFloat("Speed", speed);
-        if(animator.GetBool("IsDead"))
+        if (animator.GetBool("IsDead"))
         {
             this.enabled = false;
         }
     }
-    public void knockBack()
+    public void knockback()
     {
-        
-        // speed = speed *-1;
-        Debug.Log("knockback");
-        // knockBackTimer -= Time.deltaTime;
-        // if (knockBackTimer <= 0)
-        // {
-        //     speed = speed *-1;
+        Rigidbody2D orc = GetComponent<Rigidbody2D>();
+        if(orc != null)
+        {
+            orc.isKinematic = false;
+            positionToMoveTo = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Vector2 difference = positionToMoveTo * -1;
+            difference = difference.normalized * thrust;
+            orc.AddForce(difference, ForceMode2D.Impulse);
 
-        // }
-        // Debug.Log("after");
-        // while (knockBackTimer > 0)
-        // {
-        //     Debug.Log("hello");
-       
-        // }
-            
-        
+            StartCoroutine(knockCo(orc));
+        }
+        IEnumerator knockCo(Rigidbody2D orc)
+        {
+            if(orc != null)
+            {
+                yield return new WaitForSeconds(knockBackTime);
+                orc.velocity = Vector2.zero;
+                positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position;
+                Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads bus entrance
+                body.transform.position = targetPosition;
+                orc.isKinematic = true;
+            }
+
+        }
     }
 }
+
+

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D body;
+    public Rigidbody2D body;
     float horizontal;
     float vertical;
     // bool Fire1;

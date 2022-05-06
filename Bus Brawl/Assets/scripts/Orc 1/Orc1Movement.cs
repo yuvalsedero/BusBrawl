@@ -40,9 +40,8 @@ public class Orc1Movement : MonoBehaviour
         if(orc != null)
         {
             orc.isKinematic = false;
-            positionToMoveTo = GameObject.FindGameObjectWithTag("Player").transform.position;
-            Vector2 difference = positionToMoveTo * -1;
-            difference = difference.normalized * thrust;
+            Vector2 difference = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
+            difference = difference.normalized * (thrust * -1);
             orc.AddForce(difference, ForceMode2D.Impulse);
 
             StartCoroutine(knockCo(orc));
@@ -54,7 +53,7 @@ public class Orc1Movement : MonoBehaviour
                 yield return new WaitForSeconds(knockBackTime);
                 orc.velocity = Vector2.zero;
                 positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position;
-                Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads bus entrance
+                Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime);
                 body.transform.position = targetPosition;
                 orc.isKinematic = true;
             }

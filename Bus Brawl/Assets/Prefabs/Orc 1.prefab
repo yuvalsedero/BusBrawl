@@ -364,8 +364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ebd22cf5c01824d925869b07a68747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockback: {fileID: 0}
   animator: {fileID: 779933650}
-  maxHealth: 100
+  maxHealth: 350
   healthBarUI: {fileID: 9192416812287502240}
   slider: {fileID: 4946137114401899759}
 --- !u!114 &8812246053908665858
@@ -380,7 +381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c348480b432474696d7159471bef72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 3
+  knockBackTime: 0.5
   animator: {fileID: 779933650}
+  targetPosition: {x: 0, y: 0}
   speed: 1.5
 --- !u!114 &-7000321220746030592
 MonoBehaviour:

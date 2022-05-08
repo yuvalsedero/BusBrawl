@@ -47270,6 +47270,11 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 7171882108956307488, guid: 7bce1891589e0b94db73c6a1576fe47e,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 8983374033840328008, guid: 7bce1891589e0b94db73c6a1576fe47e,
         type: 3}
       propertyPath: m_BodyType

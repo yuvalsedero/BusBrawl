@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Orc1Movement : MonoBehaviour
+public class GirlMovement : MonoBehaviour
 
 {
     public float thrust;
@@ -20,15 +20,21 @@ public class Orc1Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position; // get bus entrance position
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads bus entrance
-        body.transform.position = targetPosition;
-        animator.SetFloat("Speed", speed);
+        positionToMoveTo = GameObject.FindGameObjectWithTag("Player").transform.position; // get bus entrance position
+        Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime); // enemy moving torwads Player
+        if (Vector2.Distance(positionToMoveTo, transform.position) > 5)
+        {
+            animator.SetFloat("Speed", speed);
+            body.transform.position = targetPosition;
+        }
+        else{
+            animator.SetFloat("Speed", 0);
+            }
         if (animator.GetBool("IsDead"))
         {
             this.enabled = false;
@@ -37,7 +43,7 @@ public class Orc1Movement : MonoBehaviour
     public void knockback()
     {
         Rigidbody2D orc = GetComponent<Rigidbody2D>();
-        if(orc != null)
+        if (orc != null)
         {
 
             Vector2 difference = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
@@ -48,7 +54,7 @@ public class Orc1Movement : MonoBehaviour
         }
         IEnumerator knockCo(Rigidbody2D orc)
         {
-            if(orc != null)
+            if (orc != null)
             {
                 yield return new WaitForSeconds(knockBackTime);
                 orc.velocity = Vector2.zero;

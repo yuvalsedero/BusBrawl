@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 310671621443343414}
   - component: {fileID: 310671621443343413}
   - component: {fileID: 310671621443343412}
-  - component: {fileID: 310671621443343411}
-  - component: {fileID: 6863369855105922775}
+  - component: {fileID: 8216407202874312972}
+  - component: {fileID: 1238797885803392767}
+  - component: {fileID: 6721269870162414939}
+  - component: {fileID: 252002976}
+  - component: {fileID: 252002977}
   m_Layer: 21
   m_Name: Orc 3
   m_TagString: Enemy
@@ -30,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 310671621443343410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.73, y: 0.6, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1492947770286074062}
@@ -75,12 +78,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -44025399
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee,
-    type: 3}
-  m_Color: {r: 0.07843137, g: 0.106620446, b: 1, a: 1}
+  m_Sprite: {fileID: 679371408, guid: 926d2c15fa3e34d438f41669a90418dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,7 +105,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.3
+  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -124,10 +126,30 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.13609326, y: -0.25274444}
+  m_Size: {x: 0.7278135, y: 1.0667896}
   m_Direction: 0
---- !u!114 &310671621443343411
+--- !u!95 &8216407202874312972
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310671621443343410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2a188f92b344d24f887bb7a3f80b475, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1238797885803392767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +158,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 310671621443343410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dad43407a39b94cb230175b6c3ece8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e7500a3e6a62d64da27e5bcf5061011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
---- !u!114 &6863369855105922775
+--- !u!114 &6721269870162414939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,9 +173,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ebd22cf5c01824d925869b07a68747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockback: {fileID: 0}
+  animator: {fileID: 8216407202874312972}
   maxHealth: 100
   healthBarUI: {fileID: 2842198541301654154}
   slider: {fileID: 2037799250248565189}
+--- !u!114 &252002976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310671621443343410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720e15353064e944e95bef50eb43576e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingDistance: 7
+  shotSpeed: 5
+  fireRate: 2
+  animator: {fileID: 8216407202874312972}
+  rock: {fileID: 8888296195509389954, guid: 78d097746011cfa4a8431e6acb43a57c, type: 3}
+--- !u!114 &252002977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310671621443343410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12c775421337cb4894f6cf68976f26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 3
+  knockBackTime: 0.8
+  animator: {fileID: 8216407202874312972}
+  targetPosition: {x: 0, y: 0}
+  speed: 1.5
 --- !u!1 &973787968906650584
 GameObject:
   m_ObjectHideFlags: 0

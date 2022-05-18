@@ -15,6 +15,7 @@ public class Orc1Movement : MonoBehaviour
     [SerializeField] public float speed;
     private void Awake()
     {
+                GetComponent<Collider2D>().enabled = true;
         body = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
@@ -39,7 +40,6 @@ public class Orc1Movement : MonoBehaviour
         Rigidbody2D orc = GetComponent<Rigidbody2D>();
         if(orc != null)
         {
-            orc.isKinematic = false;
             Vector2 difference = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
             difference = difference.normalized * (thrust * -1);
             orc.AddForce(difference, ForceMode2D.Impulse);
@@ -55,7 +55,6 @@ public class Orc1Movement : MonoBehaviour
                 positionToMoveTo = GameObject.FindGameObjectWithTag("Bus").transform.position;
                 Vector2 targetPosition = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime);
                 body.transform.position = targetPosition;
-                orc.isKinematic = true;
             }
 
         }

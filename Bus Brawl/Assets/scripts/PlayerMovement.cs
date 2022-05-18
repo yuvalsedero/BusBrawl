@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     void Start()
     {
-        GetComponent<Collider2D>().enabled = true;
+        // GetComponent<Collider2D>().enabled = true;
         body = GetComponent<Rigidbody2D>(); 
         
     }

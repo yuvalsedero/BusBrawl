@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bus
   - Enemy
+  - BusParking
   layers:
   - Default
   - TransparentFX

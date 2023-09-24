@@ -8,3 +8,4 @@ First stage: enemies wont attack but rush to the bus and u need to push and beat
 Second stage: enemies start attacking and u receive first weapon.
 (Their face will be the color of their behavior)
 
+# First time using Unity. not a finished Product, just a mess around.
